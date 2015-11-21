@@ -74,7 +74,7 @@ public class NewAppWidget extends AppWidgetProvider {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
         views.setTextViewText(R.id.appwidget_temp, IS_LOCATING);
         views.setViewVisibility(R.id.appwidget_weather, View.INVISIBLE);
-//        views.setViewVisibility(R.id.appwidget_weather, View.INVISIBLE);
+        views.setViewVisibility(R.id.appwidget_date, View.INVISIBLE);
         AppWidgetManager.getInstance(context.getApplicationContext()).updateAppWidget(new ComponentName(context.getApplicationContext(), NewAppWidget.class), views);
     }
 
@@ -89,6 +89,7 @@ public class NewAppWidget extends AppWidgetProvider {
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
             views.setTextViewText(R.id.appwidget_temp, LOCATION_FAIL);
             views.setViewVisibility(R.id.appwidget_weather, View.INVISIBLE);
+            views.setViewVisibility(R.id.appwidget_date, View.INVISIBLE);
             AppWidgetManager.getInstance(context.getApplicationContext()).updateAppWidget(new ComponentName(context.getApplicationContext(), NewAppWidget.class), views);
         }
         isFirst = false;
@@ -255,7 +256,8 @@ public class NewAppWidget extends AppWidgetProvider {
                                 }
 
                                 if (subJson.has("date")) {
-//                                    views.setTextViewText(R.id.appwidget_date, subJson.getString("date"));
+                                    views.setViewVisibility(R.id.appwidget_date, View.VISIBLE);
+                                    views.setTextViewText(R.id.appwidget_date, subJson.getString("date"));
                                 }
 
                                 if (subJson.has("temp")) {
@@ -281,8 +283,8 @@ public class NewAppWidget extends AppWidgetProvider {
                 RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
                 views.setTextViewText(R.id.appwidget_temp, FRESH_FAIL);
                 views.setViewVisibility(R.id.appwidget_weather, View.INVISIBLE);
+                views.setViewVisibility(R.id.appwidget_date, View.INVISIBLE);
                 manager.updateAppWidget(componentName, views);
-
             }
         }
     }

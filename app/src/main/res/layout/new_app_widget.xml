@@ -13,7 +13,7 @@
         android:contentDescription="@string/appwidget_text"
         android:text="11:12"
         android:textColor="@android:color/black"
-        android:textSize="36sp" />
+        android:textSize="48sp" />
 
     <TextView
         android:id="@+id/appwidget_temp"
@@ -22,7 +22,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="5dp"
         android:layout_marginRight="8dp"
-        android:text="10ºC"
+        android:text="TEST"
         android:textColor="@android:color/black"
         android:textSize="24sp" />
 
@@ -30,9 +30,21 @@
         android:id="@+id/appwidget_weather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/appwidget_temp"
         android:layout_below="@+id/appwidget_temp"
-        android:text="cloud"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        android:text="TEST"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/appwidget_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appwidget_weather"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        android:text="TEST"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 </RelativeLayout>
